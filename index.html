@@ -4,11 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA API CHALLENGE</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/app.js" defer></script>
   </head>
   <body>
-    <section class="banner"></section>
-    <section class="gallery"></section>
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__link">
+          <img class="header__logo" src="images/nasa_logo.png" alt="" />
+        </a>
+      </div>
+      <nav></nav>
+    </header>
+    <section class="banner">
+      <div class="banner__container">
+        <h1 class="banner__title">
+          nasa api challenge
+        </h1>
+      </div>
+    </section>
+    <section class="gallery">
+      <form class="gallery__form" id="galleryForm">
+        <input class="gallery__input" type="text" id="search" />
+        <button class="gallery__button" type="submit">
+          Search
+        </button>
+      </form>
+      <div class="gallery__container"></div>
+    </section>
   </body>
 </html>

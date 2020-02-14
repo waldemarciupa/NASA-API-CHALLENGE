@@ -5,17 +5,89 @@
 }
 
 body {
-  background-color: crimson;
+  font-family: "Space Mono", monospace;
+}
+
+.header {
+  background-color: #000;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+}
+
+.header__container {
+  height: 100%;
+}
+
+.header__link {
+  padding: 10px;
+}
+
+.header__logo {
+  width: 84px;
 }
 
 .banner {
-  background-color: aqua;
+  background-color: #000;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
+.banner__container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__title {
+  color: #fff;
+}
+
+/* Gallery */
+
 .gallery {
-  background-color: goldenrod;
-  height: 100vh;
-  width: 100vw;
+  background-color: grey;
+  width: 100%;
+  padding: 2rem;
+}
+
+.gallery__form {
+  margin: 0 auto 2rem;
+  width: 100%;
+  display: flex;
+  background: none;
+}
+
+.gallery__form input {
+  flex-grow: 1;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+}
+
+.gallery__form button {
+  padding: 10px 30px;
+  margin-left: 1rem;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.gallery__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  padding: 2rem;
+  background: white;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid #000;
 }
