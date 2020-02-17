@@ -2,10 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Space Mono", monospace;
 }
 
 body {
-  font-family: "Space Mono", monospace;
 }
 
 .header {
@@ -47,9 +47,10 @@ body {
 /* Gallery */
 
 .gallery {
-  background-color: grey;
+  background-color: #000;
   width: 100%;
   padding: 2rem;
+  position: relative;
 }
 
 .gallery__form {
@@ -63,10 +64,11 @@ body {
   flex-grow: 1;
   padding: 15px;
   border-radius: 3px;
-  border: 1px solid #eee;
+  border: 1px solid #000;
 }
 
-.gallery__form button {
+.gallery__button--search,
+.gallery__button--load {
   padding: 10px 30px;
   margin-left: 1rem;
   background: none;
@@ -76,6 +78,14 @@ body {
   cursor: pointer;
 }
 
+.gallery__button--load {
+  margin: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .gallery__container {
   width: 100%;
   display: grid;
@@ -83,7 +93,7 @@ body {
   grid-gap: 20px;
   align-items: stretch;
   padding: 2rem;
-  background: white;
+  background: #000;
 }
 
 .image {
@@ -92,4 +102,5 @@ body {
   object-fit: cover;
   border: 1px solid #000;
   cursor: pointer;
+  border-radius: 3px;
 }
