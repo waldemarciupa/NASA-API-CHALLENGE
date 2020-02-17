@@ -86,6 +86,14 @@ body {
   transform: translateX(-50%);
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .gallery__container {
   width: 100%;
   display: grid;
