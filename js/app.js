@@ -1,3 +1,4 @@
+const banner = document.querySelector('.banner__container');
 const galleryForm = document.querySelector('.gallery__form');
 const searchInput = document.querySelector('.gallery__input');
 const searchBtn = document.querySelector('.gallery__button--search');
@@ -5,7 +6,19 @@ const searchBtn = document.querySelector('.gallery__button--search');
 const galleryContainer = document.querySelector('.gallery__container');
 const loadBtn = document.querySelector('.gallery__button--load');
 
+axios({
+  method: 'get',
+  url: `https://api.nasa.gov/planetary/apod?api_key=KuhcmbrqkhYiFsIwuwVfOR2MCtIwXs6yPs6czrGL`
+}).then(res => {
+  console.log(banner);
+  banner.style.background = `url(${res.data.url})`;
+  banner.style.backgroundRepeat = `no-repeat`;
+  banner.style.backgroundSize = `cover`;
 
+  console.log(res.data.url);
+}).catch(function (error) {
+  console.log(error);
+})
 
 searchBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -13,9 +26,9 @@ searchBtn.addEventListener('click', function (e) {
   axios({
     method: 'get',
     url: `https://images-api.nasa.gov/search?q=${q}`,
-    data: {
-      per_page: 5
-    }
+    // data: {
+    //   per_page: 5
+    // }
   }).then(res => {
 
     if (res.data.collection.items.length > 0) {
