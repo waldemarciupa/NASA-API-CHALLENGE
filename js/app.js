@@ -69,28 +69,35 @@ searchBtn.addEventListener('click', function (e) {
           function openModal() {
             // checking is modal open
             if (modal.matches('.open')) {
-              console.info('Modal already open');
+              // console.info('Modal already open');
               return;
             }
             modal.classList.add('open');
 
-            window.addEventListener('keyup', keyUpEscape);
+            window.addEventListener('keyup', handleKeyUp);
             nextBtn.addEventListener('click', showNextImage);
+            prevBtn.addEventListener('click', showPrevImage);
           }
 
           function showNextImage(e) {
-            console.log(e);
-            e.stopImmediatePropagation();
+            // console.log(e);
+            // e.stopImmediatePropagation();
+            showImage(currentImage.nextElementSibling || galleryContainer.firstElementChild);
+          }
 
-            console.log(currentImage.nextElementSibling);
-
+          function showPrevImage(e) {
+            // console.log(e);
+            // e.stopImmediatePropagation();
+            showImage(currentImage.previousElementSibling || galleryContainer.lastElementChild);
           }
 
           function closeModal() {
             modal.classList.remove('open');
 
-            window.removeEventListener('keyup', keyUpEscape);
+            window.removeEventListener('keyup', handleKeyUp);
+            prevBtn.removeEventListener('click', showPrevImage);
             nextBtn.removeEventListener('click', showNextImage);
+
           }
 
           function clickOutside(e) {
@@ -100,9 +107,12 @@ searchBtn.addEventListener('click', function (e) {
             }
           }
 
-          function keyUpEscape(e) {
-            e.stopImmediatePropagation();
-            if (e.key === 'Escape') closeModal();
+          function handleKeyUp(e) {
+            // e.stopImmediatePropagation();
+            if (e.key === 'Escape') return closeModal();
+            if (e.key === 'ArrowRight') return showNextImage();
+            if (e.key === 'ArrowLeft') return showPrevImage();
+
           }
 
           function showImage(el) {
@@ -110,11 +120,11 @@ searchBtn.addEventListener('click', function (e) {
               console.log('there is no image to show!');
               return
             } else {
-              console.dir(el);
+              // console.dir(el);
 
               modal.querySelector('img').src = el.firstChild.src;
               modal.querySelector('h2').textContent = el.firstChild.title;
-              modal.querySelector('p').textContent = el.firstChild.dataset.description;
+              // modal.querySelector('p').textContent = el.firstChild.dataset.description;
               currentImage = el;
               openModal();
             }

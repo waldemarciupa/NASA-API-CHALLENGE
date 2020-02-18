@@ -125,7 +125,7 @@
 
 .gallery__modal {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 2;
   top: 0;
   right: 0;
@@ -141,14 +141,14 @@
 
 .gallery__modal--inner {
   border-radius: 4px;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
   transform: translateY(-100vh);
   transition: all 0.5s;
   max-width: 1000px;
   height: calc(100vh - 100px);
-  display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  /* display: grid; */
+  /* grid-template-columns: 50px 1fr 50px; */
   color: black;
   margin: 3rem;
 }
@@ -176,7 +176,9 @@
 }
 
 .gallery__modal h2 {
-  color: black;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .gallery__modal.open .gallery__modal--inner {
@@ -185,15 +187,36 @@
 
 .prev,
 .next {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
   color: #fff;
   font-size: 2rem;
+  line-height: 2rem;
   cursor: pointer;
-  transition: all 1s;
+  transition: all .5s;
+  border: none;
+  outline: none;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+  top: 50%;
+}
+
+.next {
+  right: 10px;
+  top: 50%;
 }
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fas {
+  color: #fff;
 }
