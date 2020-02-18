@@ -96,25 +96,104 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
-  align-items: stretch;
+  align-items: center;
   padding: 2rem;
   background: #000;
 }
 
 .imageBox {
+  width: 100%;
+  height: 200px;
   overflow: hidden;
+  border: 1px solid #000;
+  cursor: pointer;
 }
 
 .image {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: cover;
-  border: 1px solid #000;
-  cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
   transition: transform .8s;
 }
 
 .image:hover {
   transform: scale(1.1);
+}
+
+/* Modal */
+
+.gallery__modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.gallery__modal--inner {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-100vh);
+  transition: all 0.5s;
+  max-width: 1000px;
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  color: black;
+  margin: 3rem;
+}
+
+.gallery__modal figure {
+  height: 100%;
+  display: grid;
+  margin: 0;
+  grid-template-rows: 1fr auto;
+}
+
+.gallery__modal img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.gallery__modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.gallery__modal figcaption {
+  padding: 10px;
+}
+
+.gallery__modal h2 {
+  color: black;
+}
+
+.gallery__modal.open .gallery__modal--inner {
+  transform: translateY(0);
+}
+
+.prev,
+.next {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
