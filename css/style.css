@@ -5,9 +5,6 @@
   font-family: "Space Mono", monospace;
 }
 
-body {
-}
-
 .header {
   background-color: #000;
   height: 80px;
@@ -104,6 +101,10 @@ body {
   background: #000;
 }
 
+.imageBox {
+  overflow: hidden;
+}
+
 .image {
   width: 100%;
   /* height: 100%; */
@@ -111,4 +112,9 @@ body {
   border: 1px solid #000;
   cursor: pointer;
   border-radius: 3px;
+  transition: transform .8s;
+}
+
+.image:hover {
+  transform: scale(1.1);
 }
