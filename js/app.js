@@ -1,19 +1,26 @@
 const banner = document.querySelector('.banner__container');
-const galleryForm = document.querySelector('.gallery__form');
-const searchInput = document.querySelector('.gallery__input');
-const searchBtn = document.querySelector('.gallery__button--search');
+const galleryForm = document.querySelector('.banner__form');
+const searchInput = document.querySelector('.banner__input');
+const searchBtn = document.querySelector('.banner__button--search');
 // const gallery = document.querySelector(".gallery");
 const galleryContainer = document.querySelector('.gallery__container');
 const loadBtn = document.querySelector('.gallery__button--load');
+const apod = document.querySelector('.apod__container');
 
 axios({
   method: 'get',
   url: `https://api.nasa.gov/planetary/apod?api_key=KuhcmbrqkhYiFsIwuwVfOR2MCtIwXs6yPs6czrGL`
 }).then(res => {
-  console.log(banner);
-  banner.style.background = `url(${res.data.url})`;
-  banner.style.backgroundRepeat = `no-repeat`;
-  banner.style.backgroundSize = `cover`;
+  const apodTitle = document.createElement('h4');
+  apodTitle.classList.add('apod__title');
+  apodTitle.textContent = res.data.title;
+  apod.appendChild(apodTitle);
+
+  const apodImage = document.createElement('img');
+  apodImage.classList.add('apod__image');
+  apodImage.src = res.data.url;
+  apod.appendChild(apodImage)
+
 
   console.log(res.data.url);
 }).catch(function (error) {

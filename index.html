@@ -16,44 +16,58 @@
   <!-- <header class="header">
     <div class="header__container">
       <a href="index.html" class="header__link">
-        <img class="header__logo" src="images/nasa_logo.png" alt="" />
+        nasa api challenge
       </a>
+      <nav>Search</nav>
     </div>
-    <nav></nav>
   </header> -->
-  <section class="banner">
+  <section class="banner" id="banner">
     <div class="banner__container">
       <h1 class="banner__title">
         nasa api challenge
       </h1>
+      <p class="banner__text">
+        Use this to acces NASA Image Library
+      </p>
+      <form class="banner__form" id="bannerForm">
+        <input class="banner__input" type="text" id="search" placeholder="type what would you like to see" />
+        <button class="banner__button--search" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <div class="banner__scroll"></div>
     </div>
   </section>
-  <section class="gallery">
-    <form class="gallery__form" id="galleryForm">
-      <input class="gallery__input" type="text" id="search" placeholder="type what you would like to find" />
-      <button class="gallery__button--search" type="submit">
-        Search
-      </button>
-    </form>
+  <section class="gallery" id="gallery">
     <div class="gallery__container"></div>
     <button class="gallery__button--load hide">Load more</button>
     <div class="gallery__modal">
-      <button class="prev" aria-label="Previous Photo"><i class="fas fa-chevron-left"></i></button>
+      <button class="prev" aria-label="Previous Photo">
+        <i class="fas fa-chevron-left"></i>
+      </button>
       <div class="gallery__modal--inner">
         <figure>
           <img src="">
           <figcaption>
             <h2>Test Title</h2>
-            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dignissimos obcaecati nisi placeat eaque
-              voluptate, exercitationem eius? Non, iusto provident itaque, voluptate labore a alias officia, amet sunt
-              pariatur praesentium tenetur voluptatibus dolores mollitia quasi aliquid assumenda possimus maiores
-              exercitationem!</p> -->
           </figcaption>
         </figure>
       </div>
-      <button class="next" aria-label="Next Photo"><i class="fas fa-chevron-right"></i></button>
+      <button class="next" aria-label="Next Photo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </section>
+  <section class="apod">
+    <h2 class="apod__header">Astronomy Picture of the Day</h2>
+    <div class="apod__container"></div>
+  </section>
+
+  <footer class="footer">
+    <a href="#banner">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  </footer>
 </body>
 
 </html>
