@@ -20,9 +20,6 @@ axios({
   apodImage.classList.add('apod__image');
   apodImage.src = res.data.url;
   apod.appendChild(apodImage)
-
-
-  console.log(res.data.url);
 }).catch(function (error) {
   console.log(error);
 })
