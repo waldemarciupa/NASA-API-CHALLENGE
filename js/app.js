@@ -5,7 +5,9 @@ const searchBtn = document.querySelector('.banner__button--search');
 // const gallery = document.querySelector(".gallery");
 const galleryContainer = document.querySelector('.gallery__container');
 const loadBtn = document.querySelector('.gallery__button--load');
+const closeBtn = document.querySelector('.gallery__button--close');
 const apod = document.querySelector('.apod__container');
+const scrollBtn = document.querySelector('.footer__button--scroll');
 
 axios({
   method: 'get',
@@ -157,7 +159,7 @@ searchBtn.addEventListener('click', function (e) {
           })
 
           modal.addEventListener('click', clickOutside);
-
+          closeBtn.addEventListener('click', closeModal);
 
         }
 
@@ -221,3 +223,13 @@ searchBtn.addEventListener('click', function (e) {
     console.log(error);
   });
 });
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 100) {
+    scrollBtn.classList.remove('hide');
+    scrollBtn.classList.add('show')
+  } else if (window.screenY < 100) {
+    scrollBtn.classList.remove('show')
+    scrollBtn.classList.add('hide');
+  }
+})

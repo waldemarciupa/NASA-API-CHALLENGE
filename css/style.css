@@ -201,6 +201,19 @@
   color: #000;
 }
 
+.gallery__button--close {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: translate(100%, -100%);
+  border-radius: 50%;
+  background-color: #000;
+  border: 1px solid #000;
+}
+
 .hide {
   display: none;
 }
@@ -350,7 +363,7 @@
   color: #fff;
   position: fixed;
   bottom: 10px;
-  right: 25px;
+  right: 20px;
   margin: 0;
   padding: 0;
   transition: all .5s;
