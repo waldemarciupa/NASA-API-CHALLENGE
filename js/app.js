@@ -6,13 +6,17 @@ const searchBtn = document.querySelector('.banner__button--search');
 const galleryContainer = document.querySelector('.gallery__container');
 const loadBtn = document.querySelector('.gallery__button--load');
 const closeBtn = document.querySelector('.gallery__button--close');
-const apod = document.querySelector('.apod__container');
 const scrollBtn = document.querySelector('.footer__button--scroll');
+const apod = document.querySelector('.apod__container');
+const apodDescription = document.querySelector('.apod__description');
+const apodDescriptionTitle = document.querySelector('.apod__description--title');
+const apodDescriptionText = document.querySelector('.apod__description--text');
 
 axios({
   method: 'get',
   url: `https://api.nasa.gov/planetary/apod?api_key=KuhcmbrqkhYiFsIwuwVfOR2MCtIwXs6yPs6czrGL`
 }).then(res => {
+
   const apodTitle = document.createElement('h4');
   apodTitle.classList.add('apod__title');
   apodTitle.textContent = res.data.title;
@@ -21,7 +25,7 @@ axios({
   const apodImage = document.createElement('img');
   apodImage.classList.add('apod__image');
   apodImage.src = res.data.url;
-  apod.appendChild(apodImage)
+  apod.appendChild(apodImage);
 }).catch(function (error) {
   console.log(error);
 })
@@ -92,7 +96,9 @@ searchBtn.addEventListener('click', function (e) {
               return;
             }
             modal.classList.add('open');
-
+            // window.addEventListener('scroll', function (e) {
+            //   this.window.scrollTo(0, 0)
+            // })
             window.addEventListener('keyup', handleKeyUp);
             nextBtn.addEventListener('click', showNextImage);
             prevBtn.addEventListener('click', showPrevImage);
@@ -112,7 +118,6 @@ searchBtn.addEventListener('click', function (e) {
 
           function closeModal() {
             modal.classList.remove('open');
-
             window.removeEventListener('keyup', handleKeyUp);
             prevBtn.removeEventListener('click', showPrevImage);
             nextBtn.removeEventListener('click', showNextImage);
@@ -223,6 +228,11 @@ searchBtn.addEventListener('click', function (e) {
     console.log(error);
   });
 });
+
+// scrollBtn.addEventListener('click', function () {
+//   this.window.scrollTo(0, 0);
+// })
+
 
 window.addEventListener('scroll', function () {
   if (window.scrollY > 100) {

@@ -32,7 +32,7 @@
         </p>
       </div>
       <form class="banner__form" id="bannerForm">
-        <input class="banner__input" type="text" id="search" placeholder="type what would you like to see" />
+        <input class="banner__input" type="search" id="search" placeholder="type what would you like to see" required />
         <button class="banner__button--search" type="submit">
           <i class="fas fa-search"></i>
         </button>
@@ -63,7 +63,13 @@
   </section>
   <section class="apod">
     <h2 class="apod__header">Astronomy Picture of the Day</h2>
-    <div class="apod__container"></div>
+    <div class="apod__container">
+    </div>
+    <div class="apod__description">
+      <span class="apod__icon"></span>
+      <h2 class="apod__description--title"></h2>
+      <p class="apod__description--text"></p>
+    </div>
   </section>
 
   <footer class="footer">
