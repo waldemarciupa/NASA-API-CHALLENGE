@@ -58,7 +58,6 @@
   color: #fff;
   font-weight: 600;
   text-shadow: 2px 2px 2px #000;
-  /* border-bottom: 1px solid #fff; */
 }
 
 .banner__title {
@@ -109,11 +108,8 @@
 /* Scroll */
 
 .banner__scroll {
-  width: 20px;
-  height: 42px;
-  border: 1px solid #fff;
   position: absolute;
-  bottom: 0;
+  bottom: 25px;
   left: 50%;
   transform: translate(-50%, 50%);
   border-radius: 10px;
@@ -122,18 +118,13 @@
 
 .banner__scroll:before {
   content: '';
-  width: 6px;
-  height: 12px;
-  background: #fff;
-  border-radius: 3px;
-  margin: 6px auto;
   display: block;
   animation: mainHeroScrollAnim 0.7s 0s infinite alternate ease-in-out;
 }
 
 @keyframes mainHeroScrollAnim {
   100% {
-    margin-top: 22px;
+    margin-top: 65px;
   }
 }
 
@@ -282,8 +273,6 @@
   transition: all 0.5s;
   max-width: 1000px;
   height: calc(100vh - 100px);
-  /* display: grid; */
-  /* grid-template-columns: 50px 1fr 50px; */
   color: black;
   margin: 3rem;
 }
